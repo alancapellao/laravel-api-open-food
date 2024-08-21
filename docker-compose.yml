@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: food 
+      MYSQL_DATABASE: open_food 
+      TZ: 'America/Sao_Paulo'  
+    ports:
+      - "3309:3306"
+    networks:
+      - app-network 
+    mem_limit: 2gb  
+    restart: always  
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80"  
+    volumes:
+      - .:/var/www/html  
+    networks:
+      - app-network
+    command: bash -c "chmod 777 -R storage && composer install && apache2-foreground"
+    depends_on:
+      - mysql  
+    mem_limit: 2gb  # Ajuste aqui, se necessário
+
+networks:
+  app-network:
