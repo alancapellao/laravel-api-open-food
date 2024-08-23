@@ -86,7 +86,7 @@ Certifique-se de ter os seguintes softwares instalados:
 - **DELETE /products/{code}**: Muda o status de um produto para 'trash'.
 - **GET /products/{code}**: Obtém a informação de um produto específico.
 - **GET /products**: Lista todos os produtos com paginação.
- Parâmetros são aceitos:
-  page: Número da página
-  per_page: Número de registros por página
+  Parâmetros são aceitos.
+  - page: Número da página
+  - per_page: Número de registros por página
 

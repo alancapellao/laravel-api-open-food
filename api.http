@@ -1,0 +1,68 @@
+GET http://localhost:8000/api/products?page=1&per_page=10 HTTP/1.1
+content-type: application/json 
+
+###
+
+POST http://localhost:8000/api/products HTTP/1.1
+content-type: application/json 
+
+{
+    "code": "1234567890123",
+    "status": "published",
+    "url": "https://example.com/product",
+    "creator": "John Doe",
+    "product_name": "Example Product",
+    "quantity": "500g",
+    "brands": "Example Brand",
+    "categories": "Snacks, Beverages",
+    "labels": "Organic, Gluten-Free",
+    "cities": "New York, Los Angeles",
+    "purchase_places": "Supermarket, Online Store",
+    "stores": "Store A, Store B",
+    "ingredients_text": "Water, Sugar, Flavorings",
+    "traces": "Nuts, Dairy",
+    "serving_size": "100g",
+    "serving_quantity": 5,
+    "nutriscore_score": 7,
+    "nutriscore_grade": "B",
+    "main_category": "Snacks",
+    "image_url": "https://example.com/product-image.jpg"
+}
+
+###
+
+GET http://localhost:8000/api/products/1234567890123 HTTP/1.1
+accept: application/json
+
+###
+
+PUT http://localhost:8000/api/products/1234567890123 HTTP/1.1
+content-type: application/json 
+
+{
+    "code": "1234567890123",
+    "status": "published",
+    "url": "https://example.com/product",
+    "creator": "Updated John Doe",
+    "product_name": "Updated Example Product",
+    "quantity": "500g",
+    "brands": "Example Brand",
+    "categories": "Snacks, Beverages",
+    "labels": "Organic, Gluten-Free",
+    "cities": "New York, Los Angeles",
+    "purchase_places": "Supermarket, Online Store",
+    "stores": "Store A, Store B",
+    "ingredients_text": "Water, Sugar, Flavorings",
+    "traces": "Nuts, Dairy",
+    "serving_size": "100g",
+    "serving_quantity": 5,
+    "nutriscore_score": 7,
+    "nutriscore_grade": "B",
+    "main_category": "Snacks",
+    "image_url": "https://example.com/product-image.jpg"
+}
+
+###
+
+DELETE http://localhost:8000/api/products/1234567890123 HTTP/1.1
+accept: application/json
